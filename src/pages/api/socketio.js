@@ -6,7 +6,7 @@ const ioHandler = (req, res) => {
 
     const io = new Server(
       res.socket.server,
-      { path: "/api/socket" },
+      { path: "/api/socketio" },
       {
         cors: {
           origin: "https://lets-chat-jet.vercel.app/",
