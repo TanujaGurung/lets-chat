@@ -5,12 +5,15 @@ const ioHandler = (req, res) => {
     console.log("*First use, starting socket.io");
 
     const io = new Server(
-      res.socket.server,
+      "/",
       { path: "/api/socketio" },
+      // 
       {
         cors: {
-          origin: "https://lets-chat-jet.vercel.app/",
-        },
+          origin: "*",
+          methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"],
+          credentials: false
+        }
       }
     );
 
